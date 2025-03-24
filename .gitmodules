@@ -1,0 +1,6 @@
+[submodule "craftinginterpreters"]
+	path = craftinginterpreters
+	url = git@github.com:munificent/craftinginterpreters.git
+[submodule "rust"]
+	path = rust
+	url = git@github.com:rust-lang/rust.git
