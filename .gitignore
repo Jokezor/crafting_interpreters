@@ -2,4 +2,5 @@
 java/.gradle
 
 # Ignore Gradle build output directory
-java/build
+java/app/build
+build
