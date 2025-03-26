@@ -11,6 +11,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
+import lox.Scanner;
+
 
 public class Lox {
     static boolean hadError = false;
@@ -40,26 +42,24 @@ public class Lox {
         BufferedReader reader = new BufferedReader(input);
 
         for (;;) {
-            System.out.println("Please use me interactively :> ");
-            System.out.print(":> ");
+            System.out.print("> ");
             String line = reader.readLine();
-            if (line == null) break;
+            if (line == null) {
+                System.out.println("No input, exiting...");
+                break;
+            }
             run(line);
             hadError = false;
         }
     }
 
     private static void run(String source) {
-        //Scanner scanner = new Scanner(source);
-        //List<Token> tokens = scanner.scanTokens();
+        Scanner scanner = new Scanner(source);
+        List<Token> tokens = scanner.scanTokens();
 
-        // print, brrrr
-        /*
         for (Token token : tokens) {
             System.out.println(token);
         }
-        */
-        System.out.println("Hello! :)");
     }
 
     static void error(int line, String message) {
